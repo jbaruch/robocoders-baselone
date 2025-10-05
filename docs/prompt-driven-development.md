@@ -50,13 +50,42 @@ Human approval of input completeness; sufficient detail to begin requirements st
 
 ---
 
-### Phase 1 — **Requirements Structuring**
+### Step 0 - **Guidelines Establishment**
+
+**Purpose**
+Document the working contract for how the team will maintain the task list and artifact integrity throughout development.
+
+**Tasks**
+Update `.junie/guidelines.md` with:
+
+* **Task completion protocol**:
+    * Mark tasks as `[x]` when completed
+    * Keep phase structure intact
+    * Add new tasks only with proper linking
+* **Traceability maintenance**:
+    * New tasks must link to the plan + requirement
+    * Requirement changes trigger plan/task updates
+    * Preserve formatting consistency
+* **Change management rules**:
+    * Document rationale for scope changes
+    * Update all affected artifacts in sequence
+    * Re-validate traceability after changes
+
+**Docs**
+Complete `.junie/guidelines.md` with concise, actionable instructions.
+
+**Exit Gate**
+Human approval of working guidelines; team acknowledgment of protocols.
+
+---
+
+### Step 1 - **Requirements Structuring**
 
 **Purpose**
 Transform the initial prompt into structured, testable specifications with clear acceptance criteria.
 
 **Tasks**
-Create `docs/requirements.md` containing:
+Create `.junie/requirements.md` containing:
 
 * **Sequential numbering** (1, 2, 3, ...) for all requirements
 * **User Stories** in canonical format:
@@ -74,14 +103,14 @@ Coverage must include:
 * Logical grouping of related requirements
 
 **Docs**
-Complete `docs/requirements.md` with title, introduction, and structured requirements.
+Complete `.junie/requirements.md` with title, introduction, and structured requirements.
 
 **Exit Gate (HARD STOP)**
 Human review of requirement completeness, testability, and acceptance criteria; approval of user story clarity and benefit articulation; completion tag or checkpoint created.
 
 ---
 
-### **Implementation Planning**
+### Step 2 - **Implementation Planning**
 
 **Purpose**
 Analyze approved requirements and develop a comprehensive implementation strategy with priorities and dependencies.
@@ -103,7 +132,7 @@ Complete `docs/plan.md` with full coverage of all requirements.
 
 ---
 
-### **Task Decomposition**
+### Step 3 - **Task Decomposition**
 
 **Purpose**
 Break down the implementation plan into granular, actionable technical tasks organized by development phases. 
@@ -126,7 +155,8 @@ Create `docs/tasks.md` containing:
     * Documentation & Deployment
 
 **Guardrails**
-Every task must be linked to both a plan item and a requirement. No orphaned tasks. Tasks should be atomic and actionable.
+Every task must be linked to both a plan item and a requirement. 
+No orphaned tasks. Tasks should be atomic and actionable.
 
 **Docs**
 Complete `docs/tasks.md` with a full traceability matrix.
@@ -144,25 +174,6 @@ Document the working contract for how the team will maintain the task list and a
 **Tasks**
 Update `.junie/guidelines.md` (or equivalent team guide) with:
 
-* **Task completion protocol**:
-    * Mark tasks as `[x]` when completed
-    * Keep phase structure intact
-    * Add new tasks only with proper linking
-* **Traceability maintenance**:
-    * New tasks must link to the plan + requirement
-    * Requirement changes trigger plan/task updates
-    * Preserve formatting consistency
-* **Change management rules**:
-    * Document rationale for scope changes
-    * Update all affected artifacts in sequence
-    * Re-validate traceability after changes
-
-**Docs**
-Complete `.junie/guidelines.md` with concise, actionable instructions.
-
-**Exit Gate**
-Human approval of working guidelines; team acknowledgment of protocols; completion tag or checkpoint created.
-
 ---
 
 ## Repository & Documentation Structure
@@ -172,11 +183,12 @@ Human approval of working guidelines; team acknowledgment of protocols; completi
 ```
 project-root/
 ├── docs/
-│   ├── requirements.md  # 
+│   ├── requirements.md  # initial document, don't modify 
 │   ├── plan.md          # 
 │   └── tasks.md         # 
 └── .junie/              # or equivalent config dir
-    └── guidelines.md    # 
+    ├── guidelines.md    #
+    └── requirements.md  # 
 ```
 
 **Version control rules**
@@ -188,37 +200,37 @@ project-root/
 
 ---
 
-## Documentation Set
+## Documentation Set (Three Steps + 0 step for guidelines)
 
-### **`docs/requirements.md`** (Phase 1)
-
-* Title: Requirements Document
-* Introduction: Application purpose and scope
-* Requirements: Numbered user stories with acceptance criteria
-* Coverage: Normal flows, edge cases, errors, persistence, UI/UX
-
-### **`docs/plan.md`** (Phase 2)
-
-* Implementation strategy
-* Plan items with requirement links
-* Priorities and dependencies
-* Logical grouping of related work
-
-### **`docs/tasks.md`** (Phase 3) — **PRIMARY ARTIFACT**
-
-* Enumerated technical tasks with checkboxes
-* Development phases (Setup → Core → Advanced → Testing → QA → Deployment)
-* Dual links: plan item + requirement(s)
-* Task completion tracking
-* **The authoritative source of truth for what needs to be done**
-
-### **`.junie/guidelines.md`** (Phase 4)
+### **`.junie/guidelines.md`** 
 
 * Task list working instructions
 * Completion marking protocol
 * Traceability maintenance rules
 * Change management procedures
 * Formatting standards
+
+### **`.junie/requirements.md`** 
+
+* Title: Requirements Document
+* Introduction: Application purpose and scope
+* Requirements: Numbered user stories with acceptance criteria
+* Coverage: Normal flows, edge cases, errors, persistence, UI/UX
+
+### **`docs/plan.md`**
+
+* Implementation strategy
+* Plan items with requirement links
+* Priorities and dependencies
+* Logical grouping of related work
+
+### **`docs/tasks.md`** — **PRIMARY ARTIFACT**
+
+* Enumerated technical tasks with checkboxes
+* Development phases (Setup → Core → Advanced → Testing → QA → Deployment)
+* Dual links: plan item + requirement(s)
+* Task completion tracking
+* **The authoritative source of truth for what needs to be done**
 
 ---
 
@@ -267,9 +279,9 @@ Examples:
 
 At methodology completion, you will have:
 
-1. ✅ `docs/requirements.md` – Structured requirements with user stories and acceptance criteria
+0. ✅ `.junie/guidelines.md` – Team working instructions for artifact maintenance
+1. ✅ `.junie/requirements.md` – Structured requirements with user stories and acceptance criteria
 2. ✅ `docs/plan.md` – Implementation plan with priorities and requirement links
 3. ✅ `docs/tasks.md` – **Detailed task list with dual traceability and phase grouping (PRIMARY DELIVERABLE)**
-4. ✅ `.junie/guidelines.md` – Team working instructions for artifact maintenance
 
-All artifacts are version-controlled, tagged, and maintain complete traceability from initial prompt to executable task. The task list serves as the single source of truth for development progress and execution.
+The task list serves as the single source of truth for development progress and execution.
