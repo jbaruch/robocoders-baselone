@@ -10,9 +10,4 @@ Key requirements:
 - Avoid common pitfalls listed in the requirements
 - Use the specified code style preferences
 
-Before starting implementation:
-1. Review the current phase in docs/progress.md
-2. Ensure all prerequisite phases are complete and tagged
-3. If tests exist, make them pass without modifying locked tests
-
 Ask for the Shelly bulb IP address before testing any bulb integration.
