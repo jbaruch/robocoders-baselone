@@ -1,0 +1,3 @@
+Generate {steering/requirements/prompts} docs. 
+1. Use /docs/{methodology}.md for general methodology 
+2. Use /docs/requirements.md for creating a separate frontend and backend docs with the right tech stack and correct activation (based on directory structure or file extensions)
