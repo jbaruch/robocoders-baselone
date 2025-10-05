@@ -1,0 +1,18 @@
+Build the RGBW Control App following the specifications in #[[file:docs/requirements.md]].
+
+Follow the {methodology} defined in the steering rules.
+
+Key requirements:
+- Read and follow ALL specifications in docs/requirements.md
+- Adhere to the technology stack and constraints specified
+- Respect the "Out of Scope" section - do NOT implement excluded features
+- Follow the file generation order provided
+- Avoid common pitfalls listed in the requirements
+- Use the specified code style preferences
+
+Before starting implementation:
+1. Review the current phase in docs/progress.md
+2. Ensure all prerequisite phases are complete and tagged
+3. If tests exist, make them pass without modifying locked tests
+
+Ask for the Shelly bulb IP address before testing any bulb integration.
