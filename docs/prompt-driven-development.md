@@ -35,9 +35,9 @@ Provide high-level requirements via prompt; review and approve each artifact pha
 
 ---
 
-## Core Process (Phases & Gates)
+## Core Process
 
-### Phase 0 — **Prompt Collection** (**STOP**)
+### **Prompt Collection** 
 
 **Tasks**
 Gather high-level requirements via prompt, constraints, domain context, and success criteria from stakeholders.
@@ -50,7 +50,7 @@ Human approval of input completeness; sufficient detail to begin requirements st
 
 ---
 
-### Phase 1 — **Requirements Structuring** (**STOP**)
+### Phase 1 — **Requirements Structuring**
 
 **Purpose**
 Transform the initial prompt into structured, testable specifications with clear acceptance criteria.
@@ -81,7 +81,7 @@ Human review of requirement completeness, testability, and acceptance criteria; 
 
 ---
 
-### Phase 2 — **Implementation Planning** (**STOP**)
+### **Implementation Planning**
 
 **Purpose**
 Analyze approved requirements and develop a comprehensive implementation strategy with priorities and dependencies.
@@ -101,15 +101,14 @@ Every plan item must reference at least one requirement from Phase 1. No unlinke
 **Docs**
 Complete `docs/plan.md` with full coverage of all requirements.
 
-**Exit Gate**
-Human approval of implementation approach, priorities, and requirement coverage; completion tag or checkpoint created.
-
 ---
 
-### Phase 3 — **Task Decomposition** (**STOP**)
+### **Task Decomposition**
 
 **Purpose**
-Break down the implementation plan into granular, actionable technical tasks organized by development phases. **This is the core deliverable of Prompt-Driven Development.**
+Break down the implementation plan into granular, actionable technical tasks organized by development phases. 
+
+**This is the core deliverable of Prompt-Driven Development.**
 
 **Tasks**
 Create `docs/tasks.md` containing:
@@ -137,7 +136,7 @@ Human approval of task granularity, completeness, and traceability; confirmation
 
 ---
 
-### Phase 4 — **Guidelines Establishment** (**STOP**)
+### **Guidelines Establishment**
 
 **Purpose**
 Document the working contract for how the team will maintain the task list and artifact integrity throughout development.
@@ -173,11 +172,11 @@ Human approval of working guidelines; team acknowledgment of protocols; completi
 ```
 project-root/
 ├── docs/
-│   ├── requirements.md  # Phase 1 output
-│   ├── plan.md          # Phase 2 output
-│   └── tasks.md         # Phase 3 output (PRIMARY ARTIFACT)
+│   ├── requirements.md  # 
+│   ├── plan.md          # 
+│   └── tasks.md         # 
 └── .junie/              # or equivalent config dir
-    └── guidelines.md    # Phase 4 output
+    └── guidelines.md    # 
 ```
 
 **Version control rules**
@@ -228,18 +227,12 @@ project-root/
 **Required links (bidirectional where possible)**
 
 ```
-Prompt/Requirements (Phase 0 → Phase 1)
+Prompt/Requirements
     ↓
-Plan Items (Phase 2) → link back to requirement numbers
+Plan Items → link back to requirement numbers
     ↓
-Tasks (Phase 3) → link to plan items AND requirements
+Tasks → link to plan items AND requirements
 ```
-
-**Change cascade rules**
-
-1. **Requirement change** → reopen Phase 1 → update plan (Phase 2) → update tasks (Phase 3) → validate guidelines (Phase 4)
-2. **Plan change** → update plan (Phase 2) → update affected tasks (Phase 3) → ensure requirement links intact
-3. **Task addition** → must link to existing plan item + requirement; if new requirement needed, reopen Phase 1
 
 **Integrity checks**
 
