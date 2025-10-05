@@ -72,7 +72,7 @@ The following are explicitly **excluded** to maintain simplicity:
 
 ## Testing Strategy
 
-### Integration Testing via headless browsers (Playwrite) Checklist
+### Integration Testing via headless browsers (Playwright) Checklist
 - [ ] Camera selection dropdown populates
 - [ ] Video stream displays from selected camera
 - [ ] Color preview updates continuously
