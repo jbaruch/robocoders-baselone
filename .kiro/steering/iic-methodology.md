@@ -38,13 +38,16 @@ You are a **Senior Software Engineer + Staff-level SDET hybrid** with expertise 
 ### Phase 2 — Specification (STOP)
 - Convert intent into behavioral specifications
 - Define test hierarchy and coverage goals
+- Create Gherkin feature files in `docs/features/*.feature`
 - **Exit:** Human approval of specs; completion tag
+- **Automated:** Agent hook automatically generates tests from feature files
 
-### Phase 3 — Test Construction (HARD STOP)
-- Translate specs into executable tests BEFORE implementation
-- Ensure tests fail for the right reasons
-- Map scenarios → tests and capture coverage
+### Phase 3 — Test Review & Lock (HARD STOP)
+- Review auto-generated tests from the agent hook
+- Verify tests fail for the right reasons against placeholder/no-op code
+- Confirm coverage of acceptance criteria
 - **Exit:** Human review of test sufficiency; approve test lock; completion tag
+- **Note:** Tests are generated automatically by hook; this phase focuses on review and approval
 
 ### Phase 4 — Implementation (STOP)
 - Implement minimal code to make locked tests pass
@@ -64,8 +67,49 @@ You are a **Senior Software Engineer + Staff-level SDET hybrid** with expertise 
 - `tech_context.md` — stack, frameworks, tools
 - `tech_assumptions.md` — decisions & trade-offs
 - `requirements.md` — feature specs / contracts
-- `test_scenarios.md` — testable behaviors with scenario → test links
+- `features/*.feature` — Gherkin feature files (triggers auto-test generation)
 - `progress.md` — phase tracking, gates, tags, coverage notes
+
+## Gherkin Feature File Format (for Agent Hook)
+
+Feature files in `docs/features/*.feature` MUST follow proper Gherkin syntax for automated test generation:
+
+```gherkin
+# docs/features/color-control.feature
+
+Feature: Color Control
+  As a user
+  I want to send colors to the smart bulb
+  So that I can control the bulb color from webcam feed
+
+  @unit @component:ColorController
+  Scenario: Send valid RGB color
+    Given a valid RGB color with values 255, 0, 0
+    When I send a POST request to /api/color
+    Then the response status should be 200
+    And the bulb should receive the color command
+
+  @integration @component:ShellyBulbService
+  Scenario: Handle bulb offline
+    Given the Shelly bulb is offline
+    When I send a color command
+    Then the service should return an error
+    And the error message should indicate bulb unavailable
+
+  @e2e @component:WebcamColorDetection
+  Scenario: Detect and send color from webcam
+    Given the webcam is active
+    And the video stream is displaying
+    When a red object appears in the frame
+    Then the dominant color should be detected as red
+    And the color should be sent to the bulb automatically
+```
+
+Each scenario must include:
+- Proper Gherkin syntax (Feature, Scenario, Given/When/Then/And)
+- Tags for test type: `@unit`, `@integration`, or `@e2e`
+- Tag for component: `@component:[ComponentName]`
+- Clear, testable steps
 
 ## Tagging Protocol
 
@@ -79,6 +123,15 @@ You are a **Senior Software Engineer + Staff-level SDET hybrid** with expertise 
 - Commits reference phase/rule when relevant
 - After lock: Any change to requirements/specs/tests requires reopening the relevant phase
 
+## Automated Test Generation
+
+An agent hook automatically generates tests when Gherkin feature files are saved:
+- Hook triggers on save of any `docs/features/*.feature` file
+- Parses Gherkin scenarios and generates executable tests
+- Uses tags (`@unit`, `@integration`, `@e2e`, `@component:Name`) to determine test placement
+- Maps each test back to its Gherkin scenario for traceability
+- Tests are ready for Phase 3 review
+
 ## Change Management
 
 If requirements, specs, or tests need changes after lock:
@@ -86,6 +139,7 @@ If requirements, specs, or tests need changes after lock:
 2. Re-run its gate
 3. Re-tag on completion
 4. Update all downstream artifacts
+5. If feature files change, hook will regenerate tests automatically
 
 ## Current Phase
 
