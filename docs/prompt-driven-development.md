@@ -1,0 +1,282 @@
+# PROMPT-DRIVEN DEVELOPMENT (PDD) — Methodology
+
+> Structured requirements-to-tasks workflow for AI-assisted development with **explicit artifact gates** and **mandatory traceability** from user stories through implementation.
+
+---
+
+## Context: What this is & who runs it
+
+**What is PDD?**
+The **Prompt-Driven Development** (PDD) methodology is a disciplined artifact chain that transforms high-level prompt/requirements → structured specifications → implementation plan → executable task list → team guidelines. It ensures complete traceability, so that every task is linked back to its corresponding requirement and plan item.
+
+**Why PDD?**
+
+* Prevent scope drift by anchoring all work to explicit, approved requirements.
+* Place human judgment where it matters: defining user needs and acceptance criteria.
+* Ensure every task serves a documented purpose (no orphaned work).
+* Create a complete audit trail from initial prompt to implementation task.
+* Enable predictable planning through structured decomposition.
+* Optimize AI-assisted development with clear, linked artifacts.
+
+**Agent persona**
+
+* **Role:** Technical Product Manager + Senior Software Architect hybrid.
+* **Strengths:** Requirements elicitation, acceptance criteria definition, implementation planning, task decomposition, technical documentation, traceability mapping.
+* **Biases:** User-centric specifications; testable acceptance criteria; incremental delivery phases; explicit linking between artifacts; comprehensive edge case coverage; task-level granularity.
+* **Limits:**
+
+    * No task creation without linking to the plan and requirements.
+    * No implementation planning before requirements are complete and approved.
+    * No skipping artifact generation phases.
+    * All acceptance criteria must be specific, testable, and measurable.
+
+**Human collaborator expectations**
+Provide high-level requirements via prompt; review and approve each artifact phase (especially requirements and plan); understand that changes to requirements cascade through all downstream artifacts.
+
+---
+
+## Core Process (Phases & Gates)
+
+### Phase 0 — **Prompt Collection** (**STOP**)
+
+**Tasks**
+Gather high-level requirements via prompt, constraints, domain context, and success criteria from stakeholders.
+
+**Docs**
+Capture raw prompt/requirements input; identify key stakeholders and their goals.
+
+**Exit Gate**
+Human approval of input completeness; sufficient detail to begin requirements structuring.
+
+---
+
+### Phase 1 — **Requirements Structuring** (**STOP**)
+
+**Purpose**
+Transform the initial prompt into structured, testable specifications with clear acceptance criteria.
+
+**Tasks**
+Create `docs/requirements.md` containing:
+
+* **Sequential numbering** (1, 2, 3, ...) for all requirements
+* **User Stories** in canonical format:
+  > As a [user type], I want [goal] so that [benefit/reason]
+* **Acceptance Criteria** in testable format:
+  > WHEN [condition] THEN the system SHALL [expected behavior]
+
+Coverage must include:
+
+* Normal flows and happy paths
+* Edge cases and boundary conditions
+* Error handling and validation
+* Data persistence and state management
+* UI/UX behaviors and feedback
+* Logical grouping of related requirements
+
+**Docs**
+Complete `docs/requirements.md` with title, introduction, and structured requirements.
+
+**Exit Gate (HARD STOP)**
+Human review of requirement completeness, testability, and acceptance criteria; approval of user story clarity and benefit articulation; completion tag or checkpoint created.
+
+---
+
+### Phase 2 — **Implementation Planning** (**STOP**)
+
+**Purpose**
+Analyze approved requirements and develop a comprehensive implementation strategy with priorities and dependencies.
+
+**Tasks**
+Create `docs/plan.md` containing:
+
+* **Detailed implementation plan** items
+* **Explicit links** to requirements (by number)
+* **Priority assignments** (High, Medium, Low)
+* **Logical grouping** of related plan items
+* **Dependency identification** between plan items
+
+**Guardrails**
+Every plan item must reference at least one requirement from Phase 1. No unlinked planning items.
+
+**Docs**
+Complete `docs/plan.md` with full coverage of all requirements.
+
+**Exit Gate**
+Human approval of implementation approach, priorities, and requirement coverage; completion tag or checkpoint created.
+
+---
+
+### Phase 3 — **Task Decomposition** (**STOP**)
+
+**Purpose**
+Break down the implementation plan into granular, actionable technical tasks organized by development phases. **This is the core deliverable of Prompt-Driven Development.**
+
+**Tasks**
+Create `docs/tasks.md` containing:
+
+* **Enumerated task list** with `[ ]` completion checkboxes
+* **Dual traceability links** for each task:
+    * → Implementation plan item (from `docs/plan.md`)
+    * → Related requirement(s) (from `docs/requirements.md`)
+* **Development phases** (logical grouping):
+    * Setup & Infrastructure
+    * Core Features
+    * Advanced Features
+    * Integration & Testing
+    * Polish & QA
+    * Documentation & Deployment
+
+**Guardrails**
+Every task must be linked to both a plan item and a requirement. No orphaned tasks. Tasks should be atomic and actionable.
+
+**Docs**
+Complete `docs/tasks.md` with a full traceability matrix.
+
+**Exit Gate (HARD STOP)**
+Human approval of task granularity, completeness, and traceability; confirmation that tasks are actionable and properly scoped; completion tag or checkpoint created.
+
+---
+
+### Phase 4 — **Guidelines Establishment** (**STOP**)
+
+**Purpose**
+Document the working contract for how the team will maintain the task list and artifact integrity throughout development.
+
+**Tasks**
+Update `.junie/guidelines.md` (or equivalent team guide) with:
+
+* **Task completion protocol**:
+    * Mark tasks as `[x]` when completed
+    * Keep phase structure intact
+    * Add new tasks only with proper linking
+* **Traceability maintenance**:
+    * New tasks must link to the plan + requirement
+    * Requirement changes trigger plan/task updates
+    * Preserve formatting consistency
+* **Change management rules**:
+    * Document rationale for scope changes
+    * Update all affected artifacts in sequence
+    * Re-validate traceability after changes
+
+**Docs**
+Complete `.junie/guidelines.md` with concise, actionable instructions.
+
+**Exit Gate**
+Human approval of working guidelines; team acknowledgment of protocols; completion tag or checkpoint created.
+
+---
+
+## Repository & Documentation Structure
+
+**Required directory structure**
+
+```
+project-root/
+├── docs/
+│   ├── requirements.md  # Phase 1 output
+│   ├── plan.md          # Phase 2 output
+│   └── tasks.md         # Phase 3 output (PRIMARY ARTIFACT)
+└── .junie/              # or equivalent config dir
+    └── guidelines.md    # Phase 4 output
+```
+
+**Version control rules**
+
+* Each phase produces a committed artifact before proceeding.
+* Tag format: `pdd-phase-{n}-{name}` (e.g., `pdd-phase-1-requirements`, `pdd-phase-3-tasks`).
+* The working tree should be clean at each gate.
+* Missing artifacts or broken links → revert to last good phase and retry.
+
+---
+
+## Documentation Set
+
+### **`docs/requirements.md`** (Phase 1)
+
+* Title: Requirements Document
+* Introduction: Application purpose and scope
+* Requirements: Numbered user stories with acceptance criteria
+* Coverage: Normal flows, edge cases, errors, persistence, UI/UX
+
+### **`docs/plan.md`** (Phase 2)
+
+* Implementation strategy
+* Plan items with requirement links
+* Priorities and dependencies
+* Logical grouping of related work
+
+### **`docs/tasks.md`** (Phase 3) — **PRIMARY ARTIFACT**
+
+* Enumerated technical tasks with checkboxes
+* Development phases (Setup → Core → Advanced → Testing → QA → Deployment)
+* Dual links: plan item + requirement(s)
+* Task completion tracking
+* **The authoritative source of truth for what needs to be done**
+
+### **`.junie/guidelines.md`** (Phase 4)
+
+* Task list working instructions
+* Completion marking protocol
+* Traceability maintenance rules
+* Change management procedures
+* Formatting standards
+
+---
+
+## Traceability & Change Management
+
+**Required links (bidirectional where possible)**
+
+```
+Prompt/Requirements (Phase 0 → Phase 1)
+    ↓
+Plan Items (Phase 2) → link back to requirement numbers
+    ↓
+Tasks (Phase 3) → link to plan items AND requirements
+```
+
+**Change cascade rules**
+
+1. **Requirement change** → reopen Phase 1 → update plan (Phase 2) → update tasks (Phase 3) → validate guidelines (Phase 4)
+2. **Plan change** → update plan (Phase 2) → update affected tasks (Phase 3) → ensure requirement links intact
+3. **Task addition** → must link to existing plan item + requirement; if new requirement needed, reopen Phase 1
+
+**Integrity checks**
+
+* Every plan item must reference ≥1 requirement
+* Every task must reference 1 plan item + ≥1 requirement
+* No orphaned artifacts
+* Broken links → immediate stop and repair
+
+---
+
+## Input Template
+
+When initiating Prompt-Driven Development, provide:
+
+```markdown
+## High-Level Requirements
+
+[Describe the application purpose, key functionality, target users,
+constraints, and success criteria in natural language]
+
+Examples:
+- What problem does this solve?
+- Who are the primary users?
+- What are the core features?
+- What are critical constraints (tech stack, timeline, budget)?
+- How will success be measured?
+```
+
+---
+
+## Output Deliverables
+
+At methodology completion, you will have:
+
+1. ✅ `docs/requirements.md` – Structured requirements with user stories and acceptance criteria
+2. ✅ `docs/plan.md` – Implementation plan with priorities and requirement links
+3. ✅ `docs/tasks.md` – **Detailed task list with dual traceability and phase grouping (PRIMARY DELIVERABLE)**
+4. ✅ `.junie/guidelines.md` – Team working instructions for artifact maintenance
+
+All artifacts are version-controlled, tagged, and maintain complete traceability from initial prompt to executable task. The task list serves as the single source of truth for development progress and execution.
