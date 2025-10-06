@@ -2,6 +2,9 @@
 
 A demonstration repository showcasing different AI-assisted development methodologies for building software with AI coding agents. This project was created for a live 3-hour conference demo at Devoxx Belgium, demonstrating how different agentic AI IDEs and tools (Windsurf, Junie, Kiro, Claude Code, OpenAI Codex) can work with structured methodologies.
 
+> **🎯 This is a Template Repository**  
+> Use this as a starter for your own AI-assisted coding projects! Click the **"Use this template"** button at the top of the GitHub page to create your own repository. Then, select a methodology (PDD or IIC) and let your AI coding tool build your project using the provided prompts and guidelines.
+
 ## 📋 Table of Contents
 
 - [Project Overview](#project-overview)
@@ -123,17 +126,25 @@ robocoders-devoxx-be/
 
 ### For Humans
 
-1. **Choose a methodology** based on your project needs:
+**Quick Start: Use This Template**
+
+1. **Create your repository**: Click the **"Use this template"** button at the top of this GitHub page
+2. **Choose a methodology** based on your project needs:
    - Want comprehensive planning upfront? → Use PDD
    - Want test-first with quality gates? → Use IIC
-
-2. **Read the methodology document** thoroughly:
+3. **Read the methodology document** thoroughly:
    - PDD: [`docs/prompt-driven-development.md`](docs/prompt-driven-development.md)
    - IIC: [`docs/intent-integrity-chain.md`](docs/intent-integrity-chain.md)
+4. **Use the starter prompts** in the `prompts/` directory with your AI coding tool to build your project
+5. **Let your AI tool work**: Follow the methodology's workflow, using the provided prompts to guide the AI agent
 
-3. **Review the sample project** ([`docs/requirements.md`](docs/requirements.md)) to see how requirements should be structured
+**Learning Mode**
 
-4. **Use the starter prompts** in the `prompts/` directory to initiate AI agent workflows
+If you want to explore the methodologies before using the template:
+
+1. **Review the sample project** ([`docs/requirements.md`](docs/requirements.md)) to see how requirements should be structured
+2. **Study the methodology documents** to understand the workflow and artifact requirements
+3. **Examine the starter prompts** to see how to structure your initial requests to AI agents
 
 ### For AI Agents
 
