@@ -27,7 +27,7 @@ The repository contains:
 1. Two complete methodology specifications (PDD and IIC)
 2. Sample project requirements (RGBW smart bulb control app)
 3. Starter prompts and guidelines for AI agents
-4. Tool-specific configurations (Kiro hooks)
+4. Tool-specific prompts (Kiro hooks)
 
 ## 💡 Sample Project: RGBW Control App
 
@@ -106,7 +106,7 @@ robocoders-devoxx-be/
 │   ├── 01_generate-rules.txt        # Initial setup prompt
 │   ├── 02_starter_prompt.txt        # Project kickoff prompt
 │   └── kiro/
-│       └── hook.txt                  # Kiro-specific automation hooks
+│       └── hook.txt                  # Kiro-specific prompt hooks
 ├── LICENSE                           # MIT License
 └── README.md                         # This file
 ```
