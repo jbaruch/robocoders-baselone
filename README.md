@@ -1,7 +1,7 @@
-# Robocoders Devoxx Belgium - AI Coding Methodologies
+# Robocoders BaselOne 2025
 
 A demonstration repository showcasing different AI-assisted development methodologies for building software with AI coding agents. 
-This project was created for a conference demo at BaselOne 2025, demonstrating how different agentic AI IDEs and tools (Windsurf, Junie, Kiro, Claude Code, OpenAI Codex) can work with structured methodologies.
+This project was created for a conference demo at BaselOne 2025, demonstrating how different agentic AI IDEs and tools can work with structured methodologies.
 
 > **🎯 This is a Template Repository**  
 > Use this as a starter for your own AI-assisted coding projects! 
