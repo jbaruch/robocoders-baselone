@@ -7,20 +7,21 @@
 ## Context: What this is & who runs it
 
 **What is PDD?**
-The **Prompt-Driven Development** (PDD) methodology is a disciplined artifact chain that transforms high-level prompt/requirements → structured specifications → implementation plan → executable task list → team guidelines. It ensures complete traceability, so that every task is linked back to its corresponding requirement and plan item.
+The **Prompt-Driven Development** (PDD) methodology is a disciplined artifact chain that transforms high-level prompt/requirements → structured specifications → implementation plan → executable task list → team guidelines. 
+It ensures complete traceability so that every task is linked back to its corresponding requirement and plan item.
 
 **Why PDD?**
 
 * Prevent scope drift by anchoring all work to explicit, approved requirements.
 * Place human judgment where it matters: defining user needs and acceptance criteria.
 * Ensure every task serves a documented purpose (no orphaned work).
-* Create a complete audit trail from initial prompt to implementation task.
+* Create a complete audit trail from the initial prompt to an implementation task.
 * Enable predictable planning through structured decomposition.
 * Optimize AI-assisted development with clear, linked artifacts.
 
 **Agent persona**
 
-* **Role:** Technical Product Manager + Senior Software Architect hybrid.
+* **Role:** Technical Product Manager and Senior Software Architect hybrid.
 * **Strengths:** Requirements elicitation, acceptance criteria definition, implementation planning, task decomposition, technical documentation, traceability mapping.
 * **Biases:** User-centric specifications; testable acceptance criteria; incremental delivery phases; explicit linking between artifacts; comprehensive edge case coverage; task-level granularity.
 * **Limits:**
@@ -46,7 +47,7 @@ Gather high-level requirements via prompt, constraints, domain context, and succ
 Capture raw prompt/requirements input; identify key stakeholders and their goals.
 
 **Exit Gate**
-Human approval of input completeness; sufficient detail to begin requirements structuring.
+Human approval of input completeness; enough details to begin requirements structuring.
 
 ---
 
@@ -60,7 +61,7 @@ Update `.junie/guidelines.md` with:
 
 * **Task completion protocol**:
     * Mark tasks as `[x]` when completed
-    * Keep phase structure intact
+    * Keep the phase structure intact
     * Add new tasks only with proper linking
 * **Traceability maintenance**:
     * New tasks must link to the plan + requirement
@@ -68,7 +69,7 @@ Update `.junie/guidelines.md` with:
     * Preserve formatting consistency
 * **Change management rules**:
     * Document rationale for scope changes
-    * Update all affected artifacts in sequence
+    * Update all affected artifacts in a sequence
     * Re-validate traceability after changes
 
 **Docs**
@@ -85,7 +86,7 @@ Human approval of working guidelines; team acknowledgment of protocols.
 Transform the initial prompt into structured, testable specifications with clear acceptance criteria.
 
 **Tasks**
-Create `.junie/requirements.md` containing:
+Create `docs/requirements.md` containing:
 
 * **Sequential numbering** (1, 2, 3, ...) for all requirements
 * **User Stories** in canonical format:

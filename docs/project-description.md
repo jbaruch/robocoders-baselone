@@ -2,11 +2,11 @@
 
 ## Project Overview
 
-**Goal**: Build a web app that uses webcam feed to detect dominant color and control a Shelly Duo GU10 RGBW smart bulb over local network.
+**Goal**: Build a web app that uses webcam feed to detect dominant color and control a Shelly Duo GU10 RGBW smart bulb over the local network.
 
-**Demo Context**: 3-hours live conference demo using agentic AI IDEs and tools (Windsurf, Junie, Kiro, Claude Code OpenAI Codex)
+**Demo Context**: live conference demo using agentic AI IDEs and tools Jetbrains Junie and Amazon Kiro.
 
-**Design Philosophy**: Intentionally prioritize simplicity - NO cloud, databases, Docker, or complex infrastructure.
+**Design Philosophy**: Intentionally prioritize simplicity: NO cloud, databases, Docker, or complex infrastructure.
 
 ---
 
@@ -39,7 +39,7 @@
 
 ## Out of Scope (DO NOT IMPLEMENT)
 
-The following are explicitly **excluded** to maintain simplicity:
+The following is explicitly **excluded** to maintain simplicity:
 
 ### Backend
 - ❌ WebSocket connections
@@ -93,8 +93,8 @@ The following are explicitly **excluded** to maintain simplicity:
 - ✅ Webcam activates without manual permission prompts
 - ✅ Color preview visibly updates in real-time
 - ✅ Manual send changes bulb color within 2 seconds
-- ✅ Auto mode sends color every 3 seconds reliably
-- ✅ UI is large enough to see from back of conference room
+- ✅ Auto mode sends a color every 3 seconds reliably
+- ✅ UI is large enough to see from the back of the conference room
 - ✅ No crashes or exceptions during demo
 - ✅ Code is simple enough to explain in 5 minutes
 

@@ -1,9 +1,12 @@
 # Robocoders Devoxx Belgium - AI Coding Methodologies
 
-A demonstration repository showcasing different AI-assisted development methodologies for building software with AI coding agents. This project was created for a live 3-hour conference demo at Devoxx Belgium, demonstrating how different agentic AI IDEs and tools (Windsurf, Junie, Kiro, Claude Code, OpenAI Codex) can work with structured methodologies.
+A demonstration repository showcasing different AI-assisted development methodologies for building software with AI coding agents. 
+This project was created for a conference demo at BaselOne 2025, demonstrating how different agentic AI IDEs and tools (Windsurf, Junie, Kiro, Claude Code, OpenAI Codex) can work with structured methodologies.
 
 > **🎯 This is a Template Repository**  
-> Use this as a starter for your own AI-assisted coding projects! Click the **"Use this template"** button at the top of the GitHub page to create your own repository. Then, select a methodology (PDD or IIC) and let your AI coding tool build your project using the provided prompts and guidelines.
+> Use this as a starter for your own AI-assisted coding projects! 
+> Click the **"Use this template"** button at the top of the GitHub page to create your own repository.
+> Then, select a methodology (PDD or IIC) and let your AI coding tool build your project using the provided prompts and guidelines.
 
 ## 📋 Table of Contents
 
@@ -19,7 +22,8 @@ A demonstration repository showcasing different AI-assisted development methodol
 
 ## 🎯 Project Overview
 
-This repository demonstrates **structured approaches to AI-assisted software development**. Rather than ad-hoc prompting, it showcases disciplined methodologies that provide:
+This repository demonstrates **structured approaches to AI-assisted software development**. 
+Rather than adhoc prompting, it showcases disciplined methodologies that provide:
 
 - **Traceability**: Every code change traces back to requirements
 - **Quality gates**: Human review at critical decision points
@@ -27,10 +31,9 @@ This repository demonstrates **structured approaches to AI-assisted software dev
 - **Predictable outcomes**: Structured workflows reduce AI hallucination risks
 
 The repository contains:
-1. Two complete methodology specifications (PDD and IIC)
+1. Two complete methodology specifications - Prompt-Driven Development (PDD) and Intent Integrity Chain (IIC)
 2. Sample project requirements (RGBW smart bulb control app)
 3. Starter prompts and guidelines for AI agents
-4. Tool-specific prompts (Kiro hooks)
 
 ## 💡 Sample Project: RGBW Control App
 
@@ -46,7 +49,7 @@ The sample project is a **Vibecoding Demo** - a web application that:
 - **Frontend**: Vanilla HTML5 + Modern JavaScript (ES2024) + Color Thief 2.4.0
 - **Design Philosophy**: Intentional simplicity for live demo purposes
 
-See [`docs/requirements.md`](docs/requirements.md) for complete specifications.
+See [`docs/project-description.md`](docs/project-description.md) for complete specifications.
 
 ## 📚 Methodologies
 
@@ -100,26 +103,26 @@ Init → Analysis → Specification → Test Construction (STOP) → Implementat
 ## 📁 Repository Structure
 
 ```
-robocoders-devoxx-be/
+robocoders-baselone/
 ├── docs/
-│   ├── prompt-driven-development.md  # PDD methodology specification
-│   ├── intent-integrity-chain.md     # IIC methodology specification
-│   └── requirements.md               # Sample project (RGBW Control App) PRD
+│   ├── prompt-driven-development.md    # PDD methodology specification
+│   ├── intent-integrity-chain.md       # IIC methodology specification
+│   └── project-description.md          # Sample project (RGBW Control App) PRD
 ├── prompts/
-│   ├── 01_generate-rules.txt        # Initial setup prompt
-│   ├── 02_starter_prompt.txt        # Project kickoff prompt
+│   ├── 01_generate-rules.txt           # Initial setup prompt
+│   ├── 02_starter_prompt.txt           # Project kickoff prompt
 │   └── kiro/
-│       └── hook.txt                  # Kiro-specific prompt hooks
-├── LICENSE                           # MIT License
-└── README.md                         # This file
+│       └── hook.txt                    # Kiro-specific prompt hooks
+├── LICENSE                             # MIT License
+└── README.md                           # This file
 ```
 
 ### Key Files
 
 - **`docs/prompt-driven-development.md`**: Complete PDD methodology with artifact structure, traceability rules, and process gates
 - **`docs/intent-integrity-chain.md`**: Complete IIC methodology with phase definitions and test-first workflow
-- **`docs/requirements.md`**: Sample project requirements demonstrating how to structure specifications for AI agents
-- **`prompts/01_generate-rules.txt`**: Instructions for generating methodology-specific steering documents
+- **`docs/project-description.md`**: Sample project requirements demonstrating how to structure specifications for AI agents
+- **`prompts/01_generate_rules.txt`**: Instructions for generating methodology-specific steering documents
 - **`prompts/02_starter_prompt.txt`**: Template for starting project development with AI agents
 
 ## 🚀 Getting Started
@@ -142,7 +145,7 @@ robocoders-devoxx-be/
 
 If you want to explore the methodologies before using the template:
 
-1. **Review the sample project** ([`docs/requirements.md`](docs/requirements.md)) to see how requirements should be structured
+1. **Review the sample project** ([`docs/project-description.md`](docs/project-description.md)) to see how requirements should be structured
 2. **Study the methodology documents** to understand the workflow and artifact requirements
 3. **Examine the starter prompts** to see how to structure your initial requests to AI agents
 
@@ -157,124 +160,24 @@ If you're an AI agent being directed to this repository:
 5. **Maintain traceability** - every artifact must link to its predecessor
 6. **Stop at gates** - wait for human approval before proceeding to the next phase
 
-## 💻 Usage
-
-### Using Prompt-Driven Development (PDD)
-
-**Step 0**: Generate guidelines
-```
-Use prompts/01_generate-rules.txt to create .junie/guidelines.md
-```
-
-**Step 1**: Structure requirements
-```
-Transform user prompt into .junie/requirements.md with:
-- Sequential numbering
-- User stories (As a... I want... so that...)
-- Acceptance criteria (WHEN... THEN...)
-```
-
-**Step 2**: Create implementation plan
-```
-Generate docs/plan.md with:
-- Plan items linked to requirements
-- Priorities and dependencies
-- Logical grouping
-```
-
-**Step 3**: Decompose into tasks
-```
-Generate docs/tasks.md with:
-- Enumerated tasks with checkboxes
-- Dual links (plan item + requirements)
-- Development phases
-```
-
-### Using Intent Integrity Chain (IIC)
-
-**Phase 0**: Initialize repository
-```
-Create docs/ structure with empty stubs
-Tag: phase-0-init-complete
-```
-
-**Phase 1**: Analyze intent
-```
-Update product_context.md, active_context.md
-Define acceptance criteria
-Tag: phase-1-analysis-complete
-```
-
-**Phase 2**: Write specifications
-```
-Create behavioral specifications
-Define test hierarchy
-Tag: phase-2-spec-complete
-```
-
-**Phase 3**: Build tests (STOP for human review)
-```
-Create executable tests
-Verify expected failures
-Tag: phase-3-tests-locked
-WAIT FOR HUMAN APPROVAL
-```
-
-**Phase 4**: Implement
-```
-Write minimal code to pass tests
-Refactor with tests passing
-Tag: phase-4-implementation-complete
-```
-
-**Phase 5**: Harden
-```
-Validate NFRs (performance, security, linting)
-Package release artifacts
-Tag: phase-5-hardening-complete
-```
-
-## 🎓 Key Concepts
-
-### Traceability
-Both methodologies emphasize **bidirectional traceability**:
-- Every implementation task links back to a plan item
-- Every plan item links back to a requirement
-- No orphaned work exists
-
-### Quality Gates
-Both methodologies include **mandatory human review points**:
-- PDD: After requirements, after tasks
-- IIC: After each phase, especially after test construction
-
-### Artifact Management
-Both methodologies produce **versioned artifacts**:
-- PDD: Uses phase tags (`pdd-phase-1-requirements`)
-- IIC: Uses phase tags (`phase-3-tests-locked`)
-
-### AI Agent Guardrails
-Both methodologies define **explicit constraints**:
-- No implementation without linked requirements
-- No test modification during implementation (IIC)
-- No phase skipping
-- Mandatory stops at defined gates
-
 ## 🤝 Contributing
 
-This repository demonstrates methodologies for AI-assisted development. Contributions should maintain the philosophy of structured, traceable, gated workflows.
+This repository demonstrates methodologies for AI-assisted development. 
+Contributions should maintain the philosophy of structured, traceable, gated workflows.
 
 ## 📄 License
 
-MIT License - see [LICENSE](LICENSE) file for details.
+MIT License.
+See [LICENSE](LICENSE) for details.
 
-Copyright (c) 2025 Baruch Sadogursky
+Copyright (c) 2025 Baruch Sadogursky, Viktor Gamov
 
 ## 🔗 Additional Resources
 
-- **Devoxx Belgium**: Where this methodology was demonstrated
-- **Sample Project**: See `docs/requirements.md` for the complete RGBW Control App specification
-- **AI Tools Used**: Windsurf, Junie, Kiro, Claude Code, OpenAI Codex
+- **BaselOne 2025**: Where this methodology was demonstrated
+- **Sample Project**: See `docs/project-description.md` for the complete RGBW Control App specification
 
 ---
 
-**Note**: This repository is a demonstration of methodologies, not a complete implementation. Use it as a template and starting point for your own AI-assisted development projects.
+**Note**: This repository is a demonstration of methodologies, not a complete implementation. 
+Use it as a template and starting point for your own AI-assisted development projects.
