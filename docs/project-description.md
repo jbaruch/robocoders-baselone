@@ -19,7 +19,7 @@
 
 ### Frontend
 - **Core**: Vanilla HTML5 + Modern JavaScript (ES2024)
-- **Color Detection**: Color Thief 2.4.0
+- **Color Detection**: use native JS getImageData() on camera preview
 - **Styling**: Modern CSS with CSS Grid/Flexbox
 
 
@@ -120,6 +120,7 @@ The following is explicitly **excluded** to maintain simplicity:
 - Don't overthink camera selection (basic dropdown is fine)
 - Don't optimize prematurely (code clarity > performance)
 - Hardcoded bulb IP will probably be wrong, so it will fail until the user provides real IP. ask for IP soon, before testing.
+- Shelly has numerous API generations; use gen1, which uses simple GET requests, not RPC.
 
 ### Code Style Preferences
 - Use records for DTOs (ColorRequest, ColorResponse)
