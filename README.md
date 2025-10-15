@@ -17,7 +17,6 @@ This project was created for a conference demo at BaselOne 2025, demonstrating h
   - [Intent Integrity Chain (IIC)](#intent-integrity-chain-iic)
 - [Repository Structure](#repository-structure)
 - [Getting Started](#getting-started)
-- [Usage](#usage)
 - [License](#license)
 
 ## 🎯 Project Overview
@@ -174,8 +173,8 @@ Copyright (c) 2025 Baruch Sadogursky, Viktor Gamov
 
 ## 🔗 Additional Resources
 
-- **BaselOne 2025**: Where this methodology was demonstrated
-- **Sample Project**: See `docs/project-description.md` for the complete RGBW Control App specification
+- [**BaselOne 2025**](https://baselone.org/en/baselone-home/#schedule)
+- [**Shownotes**](https://shownotes.tuxcare.com/robocoders-judgment-day-ai-ides-face-off-baselone-2025/)
 
 ---
 
