@@ -4,7 +4,7 @@
 
 ---
 
-## Context: What this is & who runs it
+## Context: What this is and who runs it
 
 **What is PDD?**
 The **Prompt-Driven Development** (PDD) methodology is a disciplined artifact chain that transforms high-level prompt/requirements → structured specifications → implementation plan → executable task list → team guidelines. 
@@ -104,7 +104,7 @@ Coverage must include:
 * Logical grouping of related requirements
 
 **Docs**
-Complete `.junie/requirements.md` with title, introduction, and structured requirements.
+Complete `docs/requirements.md` with title, introduction, and structured requirements.
 
 **Exit Gate (HARD STOP)**
 Human review of requirement completeness, testability, and acceptance criteria; approval of user story clarity and benefit articulation; completion tag or checkpoint created.
@@ -184,12 +184,12 @@ Update `.junie/guidelines.md` (or equivalent team guide) with:
 ```
 project-root/
 ├── docs/
-│   ├── requirements.md  # initial document, don't modify 
+│   ├── project-description.md  # initial document, don't modify
+|   ├── requirements.md
 │   ├── plan.md          # 
 │   └── tasks.md         # 
 └── .junie/              # or equivalent config dir
-    ├── guidelines.md    #
-    └── requirements.md  # 
+    └──  guidelines.md    
 ```
 
 **Version control rules**
@@ -211,7 +211,7 @@ project-root/
 * Change management procedures
 * Formatting standards
 
-### **`.junie/requirements.md`** 
+### **`docs/requirements.md`** 
 
 * Title: Requirements Document
 * Introduction: Application purpose and scope
@@ -281,7 +281,7 @@ Examples:
 At methodology completion, you will have:
 
 0. ✅ `.junie/guidelines.md` – Team working instructions for artifact maintenance
-1. ✅ `.junie/requirements.md` – Structured requirements with user stories and acceptance criteria
+1. ✅ `docs/requirements.md` – Structured requirements with user stories and acceptance criteria
 2. ✅ `docs/plan.md` – Implementation plan with priorities and requirement links
 3. ✅ `docs/tasks.md` – **Detailed task list with dual traceability and phase grouping (PRIMARY DELIVERABLE)**
 
